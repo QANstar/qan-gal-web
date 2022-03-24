@@ -1,0 +1,76 @@
+*{
+    transition: 0.2s;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* 动画 */
+@keyframes show-toright{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.show-toright{
+    animation: show-toright 0.5s;
+}
+
+/* 左侧导航 */
+.leftNav{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+}
+.leftNav a{
+    color: #fff;
+    font-size: 20px;
+}
+.leftNav ul{
+    padding: 10px;
+}
+.leftNav ul li{
+    list-style: none;
+    margin: 25px 0;
+}
+
+.leftNav a:hover{
+    color: #33b6ee ;
+    font-size: 25px ;
+    font-weight: bold;
+}
+.nav-title-en{
+    font-size: 16px;
+}
+
+/* 读取存档 */
+.load-content{
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+/* 标题 */
+.title{
+    color: #fff;
+    font-size: 25px;
+}
+.title-child{
+    color: #fff;
+    font-size: 18px;
+}
