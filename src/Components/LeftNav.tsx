@@ -11,7 +11,7 @@ function leftNav() {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/play">
             <div>开始游戏</div>
             <div className="nav-title-en">Start</div>
           </Link>
