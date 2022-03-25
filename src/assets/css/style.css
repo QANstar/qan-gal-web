@@ -1,29 +1,31 @@
-*{
+* {
     transition: 0.2s;
 }
 
-html,body{
+html,
+body {
     width: 100%;
     height: 100%;
     margin: 0;
 }
 
 /* 动画 */
-@keyframes show-toright{
-    0%{
+@keyframes show-toright {
+    0% {
         width: 0;
     }
-    100%{
+
+    100% {
         width: 100%;
     }
 }
 
-.show-toright{
+.show-toright {
     animation: show-toright 0.5s;
 }
 
 /* 左侧导航 */
-.leftNav{
+.leftNav {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
@@ -33,29 +35,33 @@ html,body{
     color: #fff;
     font-size: 20px;
 }
-.leftNav a{
+
+.leftNav a {
     color: #fff;
     font-size: 20px;
 }
-.leftNav ul{
+
+.leftNav ul {
     padding: 10px;
 }
-.leftNav ul li{
+
+.leftNav ul li {
     list-style: none;
     margin: 25px 0;
 }
 
-.leftNav a:hover{
-    color: #33b6ee ;
-    font-size: 25px ;
+.leftNav a:hover {
+    color: #33b6ee;
+    font-size: 25px;
     font-weight: bold;
 }
-.nav-title-en{
+
+.nav-title-en {
     font-size: 16px;
 }
 
 /* 读取存档 */
-.load-content{
+.load-content {
     padding: 20px;
     height: 100%;
     width: 100%;
@@ -65,12 +71,65 @@ html,body{
 }
 
 
+.load-main {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.load-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.load-card {
+    background-color: rgba(177, 177, 177, 0.5);
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 22%;
+    height: 38%;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.load-card:hover {
+    box-shadow: -5px -5px 10px #b3b3b3,
+        5px 5px 10px #c1c1c1;
+}
+
+.load-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.load-img {
+    width: 100%;
+    height: 55%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.load-img img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.load-lines {
+    margin-top: 10px;
+}
+
 /* 标题 */
-.title{
+.title {
     color: #fff;
     font-size: 25px;
 }
-.title-child{
+
+.title-child {
     color: #fff;
     font-size: 18px;
 }
