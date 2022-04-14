@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import LeftNav from "../Components/LeftNav";
 import "../assets/css/layout.css";
-function home() {
+
+function Home() {
   return (
     <div className="home-content">
       <header className="left-nav">
@@ -15,4 +16,4 @@ function home() {
   );
 }
 
-export default home;
+export default Home;

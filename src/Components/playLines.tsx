@@ -1,13 +1,13 @@
 import React from "react";
-import IPlayLines from "../interface/IPlayLines";
+import ILinesItem from "../interface/ILinesItem";
 import { Link } from "react-router-dom";
 interface Props {
-  data: IPlayLines;
+  data: ILinesItem;
 }
 function PlayBg(props: Props) {
   return (
     <div className="play-lines">
-      <div className="play-lines-name">{props.data.charaName}：</div>
+      <div className="play-lines-name">{props.data.chara}</div>
       <div className="play-lines-text">{props.data.lines}</div>
       <div className="play-tool">
         <ul>
