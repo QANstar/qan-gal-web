@@ -1,9 +1,12 @@
 &event:开始
-&background:bg1.png
+&background:bg2.jpg
+&charaPic:a.png;b.png
 &lines:QANstar:Hello Galgame
 &lines:索米:New Test
+&charaPic:a.png
 &lines:QANstar:这是一个galgame引擎
 &background:t1.jpg
 &lines:231:太完美了
 &lines:QAN213star:太完美了2
 &lines:QANstar:太完美了3
+&lines:旁白:

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PlayBg from "../Components/playBg";
 import PlayLines from "../Components/playLines";
+import PlayChara from "../Components/playChara";
 import IPlayLines from "../interface/IPlayLines";
 import ILinesItem from "../interface/ILinesItem";
 import linesDeal from "../assets/ts/linesDeal";
@@ -14,7 +15,7 @@ function Play() {
       event: "开始",
       bg: "bg1.png",
       chara: "QANstar",
-      charaPic: [""],
+      charaPic: [],
       lines: "Hello Galgame",
     },
   ]);
@@ -39,6 +40,7 @@ function Play() {
   return (
     <div onClick={lineIdAdd} className="play-content">
       <PlayBg img={lines[lineId].bg} />
+      <PlayChara chara={lines[lineId].charaPic} />
       <PlayLines data={lines[lineId]} />
     </div>
   );

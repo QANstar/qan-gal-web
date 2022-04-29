@@ -5,6 +5,10 @@ interface Props {
   data: ILinesItem;
 }
 function PlayBg(props: Props) {
+  const test = (e: any) => {
+    alert(1);
+    e.stopPropagation();
+  };
   return (
     <div className="play-lines">
       <div className="play-lines-name">{props.data.chara}</div>
@@ -14,7 +18,7 @@ function PlayBg(props: Props) {
           <li>
             <Link to="/">Title</Link>
           </li>
-          <li>Auto</li>
+          <li onClick={test}>Auto</li>
           <li>Skip</li>
           <li>Back</li>
           <li>Next</li>

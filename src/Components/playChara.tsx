@@ -1,11 +1,13 @@
 import React from "react";
 interface Props {
-  img: string;
+  chara: Array<string>;
 }
 function Chara(props: Props) {
   return (
-    <div className="play-bg">
-      <img src={require("../assets/img/gameBg/" + props.img)} />
+    <div className="play-chara">
+      {props.chara.map((cha) => (
+        <img src={require("../assets/img/charaPic/" + cha)} />
+      ))}
     </div>
   );
 }

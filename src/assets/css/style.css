@@ -135,6 +135,8 @@ body {
 
 /* 游戏中 */
 .play-content {
+  position: relative;
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
 }
@@ -148,7 +150,16 @@ body {
 .play-bg img {
   width: 100%;
 }
-
+.play-chara {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: -100px;
+}
+.play-chara img {
+  width: 30%;
+}
 .play-lines {
   z-index: 1;
   position: absolute;
