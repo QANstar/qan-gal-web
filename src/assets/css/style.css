@@ -121,7 +121,25 @@ body {
 .load-lines {
   margin-top: 10px;
 }
-
+.load-time {
+  width: 100%;
+  text-align: right;
+}
+.save-back {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 5px 8px;
+  width: 60px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  text-align: center;
+}
+.save-back:hover {
+  transform: scale(1.1);
+}
 /* 标题 */
 .title {
   color: #fff;
@@ -221,4 +239,11 @@ body {
 
 .play-tool a:hover {
   color: #33b6ee;
+}
+.play-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
 }

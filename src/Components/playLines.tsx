@@ -3,11 +3,15 @@ import ILinesItem from "../interface/ILinesItem";
 import { Link } from "react-router-dom";
 interface Props {
   data: ILinesItem;
+  openSave: () => void;
 }
 function PlayBg(props: Props) {
   const test = (e: any) => {
-    alert(1);
     e.stopPropagation();
+  };
+  const openSave = (e: any) => {
+    e.stopPropagation();
+    props.openSave();
   };
   return (
     <div className="play-lines">
@@ -22,7 +26,7 @@ function PlayBg(props: Props) {
           <li>Skip</li>
           <li>Back</li>
           <li>Next</li>
-          <li>Save</li>
+          <li onClick={openSave}>Save</li>
           <li>Load</li>
           <li>Config</li>
         </ul>
