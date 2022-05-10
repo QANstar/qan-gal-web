@@ -3,7 +3,7 @@ import SaveCard from "../Components/saveCard";
 import ISave from "../interface/ISave";
 import getTime from "../utils/getTime";
 import SaveUtils from "../utils/saveUtils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ILinesItem from "../interface/ILinesItem";
 
 interface Props {
@@ -18,6 +18,11 @@ function LoadOrSave(props: Props) {
   const pageSize: number = 8;
   const isSave: boolean = props.isSave;
   const [saveList, setSaveList] = useState<Array<ISave>>(saveLocal.get());
+  const [showData, setShowData] = useState<any[]>([]);
+
+  useEffect(() => {
+    showList();
+  });
 
   let saveOnclick = (saveId: number) => {
     if (props.line) {
@@ -50,7 +55,7 @@ function LoadOrSave(props: Props) {
         );
       }
     }
-    return res;
+    setShowData(res);
   };
 
   return (
@@ -65,7 +70,7 @@ function LoadOrSave(props: Props) {
         <div className="title-child">{isSave ? "Save" : "Load"}</div>
       </header>
       <main className="load-main">
-        <div className="load-list">{showList()}</div>
+        <div className="load-list">{showData}</div>
       </main>
     </div>
   );
