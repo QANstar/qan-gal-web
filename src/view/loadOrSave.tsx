@@ -4,26 +4,54 @@ import ISave from "../interface/ISave";
 import getTime from "../utils/getTime";
 import SaveUtils from "../utils/saveUtils";
 import { useState } from "react";
+import ILinesItem from "../interface/ILinesItem";
 
 interface Props {
   isSave: boolean;
   back?: boolean;
   backClick?: () => void;
+  line?: ILinesItem;
 }
 
 function LoadOrSave(props: Props) {
-  let dataInit: ISave = {
-    saveId: 0,
-    lineId: 0,
-    event: "",
-    savePic: "",
-    line: "",
-    time: getTime(),
-  };
   const saveLocal: SaveUtils = new SaveUtils();
   const pageSize: number = 8;
   const isSave: boolean = props.isSave;
   const [saveList, setSaveList] = useState<Array<ISave>>(saveLocal.get());
+
+  let saveOnclick = (saveId: number) => {
+    if (props.line) {
+      let data: ISave = {
+        saveId: saveId,
+        lineId: props.line.id,
+        event: props.line.event,
+        savePic: props.line.bg,
+        line: props.line.lines,
+        time: getTime(),
+      };
+      saveLocal.save(data);
+      setSaveList(saveLocal.get());
+    }
+  };
+
+  let showList = () => {
+    let res = [];
+    for (let i = 0; i < pageSize; i++) {
+      let item = saveList.find((x) => x.saveId == i);
+      if (item != undefined) {
+        res.push(<SaveCard key={i} data={item} />);
+      } else {
+        res.push(
+          <div
+            onClick={() => saveOnclick(i)}
+            key={i}
+            className="load-card"
+          ></div>
+        );
+      }
+    }
+    return res;
+  };
 
   return (
     <div className="load-content show-toright">
@@ -37,7 +65,7 @@ function LoadOrSave(props: Props) {
         <div className="title-child">{isSave ? "Save" : "Load"}</div>
       </header>
       <main className="load-main">
-        <div className="load-list"></div>
+        <div className="load-list">{showList()}</div>
       </main>
     </div>
   );

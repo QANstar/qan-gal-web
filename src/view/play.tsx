@@ -57,11 +57,16 @@ function Play() {
       {lineVisable ? (
         <PlayLines openSave={openSave} data={lines[lineId]} />
       ) : null}
-      <div onClick={menuClick} className="play-menu">
-        {saveVisable ? (
-          <LoadOrSave backClick={saveBack} back isSave={true} />
-        ) : null}
-      </div>
+      {saveVisable ? (
+        <div onClick={menuClick} className="play-menu">
+          <LoadOrSave
+            line={lines[lineId]}
+            backClick={saveBack}
+            back
+            isSave={true}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }
